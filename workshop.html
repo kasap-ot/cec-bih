@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
+</head>
+<script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+</script>
+
+<body>
+    <div id="header-placeholder"></div>
+    <div class="comming_soon"> Comming soon</div>
+    <div id="footer-placeholder"></div>
+</body>
+
+</html>

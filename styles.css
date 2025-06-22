@@ -13,6 +13,14 @@
     --width-container: 75%;
 }
 
+/* Comming Soon Page Styles */
+.comming_soon {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-top: 50px;
+}
+
 /* Header Styles */
 .header-container {
     background-color: var(--primary-color);
