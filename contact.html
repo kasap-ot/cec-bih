@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
     <style>
         body {
@@ -15,58 +17,77 @@
             margin: 0 auto;
             background-color: #f4f4f4;
         }
+
         h1 {
             color: #006b91;
             border-bottom: 2px solid #8bc7ed;
             padding-bottom: 10px;
         }
+
         .contact-info {
             background-color: #e8e8e8;
             padding: 20px;
             border-radius: 5px;
             margin-top: 20px;
         }
+
         .contact-method {
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #d2d9dc;
         }
+
         .contact-method:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
+
         .contact-label {
             font-weight: bold;
             color: #006b91;
             margin-bottom: 5px;
             display: block;
         }
+
         .contact-value {
             margin-left: 20px;
         }
+
         .social-icon {
             width: 20px;
             height: 20px;
             vertical-align: middle;
             margin-right: 8px;
         }
+
         a {
             color: #006b91;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
             color: #8bc7ed;
         }
     </style>
 </head>
+
 <body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
     <h1>Contact</h1>
-    
+
     <div class="contact-info">
         <p>If you have any questions, feel free to reach us at:</p>
-        
+
         <div class="contact-method">
             <span class="contact-label">Instagram:</span>
             <div class="contact-value">
@@ -74,21 +95,22 @@
                 <a href="https://www.instagram.com/iaestebanjaluka" target="_blank">@iaestebanjaluka</a>
             </div>
         </div>
-        
+
         <div class="contact-method">
             <span class="contact-label">Email:</span>
             <div class="contact-value">
                 <a href="mailto:cec@iaeste.sk">cec@iaeste.sk</a>
             </div>
         </div>
-        
+
         <div class="contact-method">
             <span class="contact-label">Facebook:</span>
             <div class="contact-value">
-                <a href="https://www.facebook.com/IAESTE.Central.European.Convention" target="_blank">IAESTE Central European Convention</a>
+                <a href="https://www.facebook.com/IAESTE.Central.European.Convention" target="_blank">IAESTE Central
+                    European Convention</a>
             </div>
         </div>
-        
+
         <div class="contact-method">
             <span class="contact-label">Website and Instagram CER:</span>
             <div class="contact-value">
@@ -98,4 +120,5 @@
         </div>
     </div>
 </body>
+
 </html>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>CEC Bosnia and Herzegovina 2025 - Registration</title>
     <style>
         body {
@@ -15,47 +17,59 @@
             margin: 0 auto;
             background-color: #f4f4f4;
         }
+
         h1 {
             color: #006b91;
             border-bottom: 2px solid #8bc7ed;
             padding-bottom: 10px;
         }
-        h2, h3 {
+
+        h2,
+        h3 {
             color: #006b91;
             margin-top: 25px;
         }
+
         .event-info {
             background-color: #e8e8e8;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
         }
+
         .fee-table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
-        .fee-table th, .fee-table td {
+
+        .fee-table th,
+        .fee-table td {
             border: 1px solid #d2d9dc;
             padding: 12px;
             text-align: left;
         }
+
         .fee-table th {
             background-color: #006b91;
             color: #f4f4f4;
         }
+
         .fee-table tr:nth-child(even) {
             background-color: #e8e8e8;
         }
+
         .included-list {
             background-color: #cadecf;
             padding: 15px;
             border-radius: 5px;
             margin: 20px 0;
         }
+
         .included-list ul {
             padding-left: 20px;
         }
+
         .registration-link {
             display: inline-block;
             background-color: #006b91;
@@ -67,13 +81,16 @@
             margin: 20px 0;
             transition: background-color 0.3s;
         }
+
         .registration-link:hover {
             background-color: #8bc7ed;
             color: #333;
         }
+
         .emoji {
             font-size: 1.2em;
         }
+
         .member-types {
             background-color: #c4dce5;
             padding: 15px;
@@ -82,18 +99,31 @@
         }
     </style>
 </head>
+
 <body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+
     <h1>Registration</h1>
-    
+
     <div class="event-info">
-        <p>Secure your spot at CEC Bosnia and Herzegovina 2025 and be part of an unforgettable experience in the heart of the Bosna River valley. Join IAESTE members from across Central Europe for workshops, networking, and cultural exchange in the scenic town of Zenica, Bosnia and Herzegovina.</p>
-        
+        <p>Secure your spot at CEC Bosnia and Herzegovina 2025 and be part of an unforgettable experience in the heart
+            of the Bosna River valley. Join IAESTE members from across Central Europe for workshops, networking, and
+            cultural exchange in the scenic town of Zenica, Bosnia and Herzegovina.</p>
+
         <p class="emoji">📅 Event Dates: 19-21 September 2025</p>
         <p class="emoji">📍 Location: Zenica, Bosnia and Herzegovina</p>
     </div>
-    
+
     <h2>Participation Fees</h2>
-    
+
     <table class="fee-table">
         <thead>
             <tr>
@@ -116,15 +146,16 @@
             </tr>
         </tbody>
     </table>
-    
+
     <div class="member-types">
         <h3>IAESTE CER Full Members:</h3>
-        <p>Austria, Bosnia and Herzegovina, Croatia, Czech Republic, Germany, Hungary, Poland, Slovakia, Slovenia, Macedonia</p>
-        
+        <p>Austria, Bosnia and Herzegovina, Croatia, Czech Republic, Germany, Hungary, Poland, Slovakia, Slovenia,
+            Macedonia</p>
+
         <h3>IAESTE CER Associate Members:</h3>
         <p>Turkiye</p>
     </div>
-    
+
     <div class="included-list">
         <h3>The fee includes:</h3>
         <ul>
@@ -135,7 +166,8 @@
             <li>An unforgettable experience</li>
         </ul>
     </div>
-    
+
     <a href="#" class="registration-link">Registration link -></a>
 </body>
+
 </html>

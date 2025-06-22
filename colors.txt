@@ -1,0 +1,16 @@
+Logo Colors:
+
+- Blue: #006b91
+- White: #acccd8 (note: slightly off-white, due to image rendering)
+- Gray: #f4f4f4
+
+Theme Colors:
+
+- Light Blue: #c4dce5
+- Beige: #d2d9dc
+- Light Green: #e8e8e8
+- Sky Blue: #8bc7ed
+- Pale Green: #cadecf
+- Yellow-Green: #d7dda0
+- Soft Green: #c1d9c9
+- Mint Green: #bed2a6
