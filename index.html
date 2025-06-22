@@ -6,18 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>CEC Bosnia and Herzegovina 2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
+    <script>
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+    // Countdown Timer
+    function DayNameFromDOW(dDate) {
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+        return weekday[dDate.getDay()];
+        }
+
+        function NextWebinarDateandTime() {
+        CurDate = new Date('2025-09-19T00:00:00');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+        NextWebinarDateandTime();
+
+        var CurrentMinutes = CurDate.getMinutes();
+        var CurrentSeconds = CurDate.getSeconds();
+
+
+        const MinutesPerHour = 60
+        const IntervalBetweenWebinar  = 60; // minutes
+        
+
+        var nSecsUntilNextWebinar =
+            (3600) - (CurrentMinutes*60) - CurrentSeconds;
+
+        nextInt = Math.ceil((MinutesPerHour - CurrentMinutes) / IntervalBetweenWebinar);
+        
+            var nSecsUntilNextWebinar =
+            (MinutesPerHour * (nextInt*IntervalBetweenWebinar)) - (CurrentMinutes*60) - CurrentSeconds;
+
+
+        
+        NextWebinar =
+            CurDate.getTime() / 1000 +
+            nSecsUntilNextWebinar;
+        
+        var d = new Date();
+
+        dd = new Date(CurDate.getTime()+(1000*(nSecsUntilNextWebinar)));
+        var flipdown = new FlipDown(NextWebinar)
+            .start()
+
+            .ifEnded(() => {});
+    });
+</script>
 </head>
 
 <body>
     <div id="header-placeholder"></div>
+       <div class="countdown-container">
+       <h1> 19 - 21 September</h1>
+       <div id="flipdown" class="flipdown"></div>  
+    </div>
 
-    <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-    </script>
 
     <div class="event-description">
         <p>Get ready for the Autumn CEC hosted in Zenica, Bosnia and Herzegovina—a vibrant celebration of IAESTE
@@ -32,16 +94,7 @@
         <p>Pack your bags, bring your energy, and let's meet in Bosnia!</p>
     </div>
 
-    <div class="footer-info">
-        <h2>IAESTE Bosnia and Herzegovina</h2>
-
-        <div class="contact-links">
-            <a href="mailto:cec@iaeste.sk">Email: cec@iaeste.sk</a>
-            <a href="https://www.instagram.com/iaestecec" target="_blank">CEC Instagram: @iaestecec</a>
-        </div>
-
-        <p style="margin-top: 30px; font-weight: bold;">51st Central European Convention</p>
-    </div>
+    <div id="footer-placeholder"></div>
 </body>
 
 </html>

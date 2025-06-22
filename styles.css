@@ -2,7 +2,7 @@
 :root {
     --primary-color: #006b91;
     --secondary-color: #8bc7ed;
-    --background-color: #f4f4f4;
+    --background-color: #d2d9dc;
     --light-gray: #e8e8e8;
     --border-color: #d2d9dc;
     --text-color: #333;
@@ -10,6 +10,7 @@
     --highlight-green: #cadecf;
     --highlight-yellow: #d7dda0;
     --highlight-blue: #c4d5e5;
+    --width-container: 75%;
 }
 
 /* Header Styles */
@@ -24,9 +25,11 @@
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .logo {
@@ -66,31 +69,62 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    color: var(--text-color);
-    max-width: 1000px;
-    margin: 0 auto;
+    background-image: url('pictures/CEC-BOSNIA-BGRD.jpg');
+    background-size: 85% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0 auto; 
+    width: var(--width-container);
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
+body>h1, h2, h3 {
+    color: var(--highlight-blue);
 }
-
-h1 {
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
+a{
+    color: var(--highlight-yellow);
 }
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
 a:hover {
-    text-decoration: underline;
-    color: var(--secondary-color);
+    color: var(--highlight-blue);
+}
+
+/* Countdown Container */
+
+.countdown-container {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+.flipdown {
+    width: 100% !important;
+    max-width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.flipdown.flipdown__theme-dark .rotor-group-heading:before {
+    color: var(--primary-color) !important;
+}
+.flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):before,.flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    background-color: var(--highlight-blue) !important;
+}
+
+.flipdown.flipdown__theme-dark .rotor,.flipdown.flipdown__theme-dark .rotor-top,.flipdown.flipdown__theme-dark .rotor-leaf-front {
+    color: #fff !important;;
+    background-color: var(--highlight-blue)!important;
+}
+
+.flipdown.flipdown__theme-dark .rotor-bottom,.flipdown.flipdown__theme-dark .rotor-leaf-rear {
+    color: #fff !important;
+    background-color: var(--highlight-blue)!important;
+}
+
+.flipdown.flipdown__theme-dark .rotor:after {
+    border-top: solid 1px var(--highlight-blue)!important;
 }
 
 /* Contact Page Styles */
@@ -159,9 +193,12 @@ a:hover {
 
 .footer-info {
     text-align: center;
+    color: var(--highlight-yellow);
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
 }
 
 .navigation a {
