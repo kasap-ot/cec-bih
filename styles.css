@@ -91,7 +91,7 @@ body {
     width: var(--width-container);
 }
 
-body>h1, h2, h3 {
+body>h1, body>h2, body>h3 {
     color: var(--highlight-blue);
 }
 a{
@@ -256,7 +256,9 @@ a:hover {
     border-radius: 5px;
     margin-bottom: 20px;
 }
-
+.event-info>h1, .event-info>h2, .event-info>h3 {
+    color: var(--primary-color);
+}
 .fee-table {
     width: 100%;
     border-collapse: collapse;
@@ -267,6 +269,7 @@ a:hover {
     border: 1px solid var(--border-color);
     padding: 12px;
     text-align: left;
+    background-color: var(--light-gray);
 }
 
 .fee-table th {
