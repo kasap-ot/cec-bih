@@ -237,8 +237,10 @@ a:hover {
 
 .transport-option {
     margin-bottom: 25px;
-    padding-left: 15px;
+    padding: 15px;
     border-left: 3px solid var(--secondary-color);
+    background-color: var(--highlight-blue);
+    border-radius: 5px;
 }
 
 .tip {

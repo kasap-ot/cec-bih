@@ -2,80 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Hotel Zenica - Location</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Hotel Zenica - Location</title>
 </head>
 
 <body>
-    <div id="header-placeholder"></div>
+  <!-- Header placeholder -->
+  <div id="header-placeholder"></div>
 
-    <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-    </script>
+  <h1 style="color: #006b91;">Location page</h1>
 
-    <h1>Location page</h1>
+  <div class="hotel-info">
+    <h2>Hotel Zenica, Zenica, Bosnia and Herzegovina</h2>
+    <h3 class="emoji">About Zenica</h3>
+    <p>
+      Hotel Zenica is part of Kamberovića Polje, a green oasis featuring walking trails,
+      athletic facilities (stadium, tennis, football, track), and adjacent to a shopping mall
+      and fairgrounds—ideal for leisure and convenience. The city itself lies along the scenic
+      Bosna River, surrounded by hills—striking yet intimate.
+    </p>
 
-    <div class="hotel-info">
-        <h2>Hotel Zenica, Zenica, Bosnia and Herzegovina</h2>
+    <p>Pictures from the hotel</p>
+  </div>
 
-        <h3 class="emoji">🏨 About Zenica</h3>
-        <p>Hotel Zenica is part of Kamberovića Polje, a green oasis featuring walking trails, athletic facilities
-            (stadium, tennis, football, track), and adjacent to a shopping mall and fairgrounds—ideal for leisure and
-            convenience. The city itself lies along the scenic Bosna River, surrounded by hills—striking yet intimate.
-        </p>
+  <h2 style="color: #006b91;">Getting There from Sarajevo</h2>
 
-        <p>Pictures from the hotel</p>
+  <div class="transport-option">
+    <h3>1. By Car (Fastest)</h3>
+    <p>Distance: ~70 km (~44 miles) north of Sarajevo via M17 highway.</p>
+    <p>Travel Time: Around 46–50 minutes, depending on traffic.</p>
+    <div class="tip">
+      Tip: Fuel and toll cost approx. $12–17. A scenic drive through the Bosna river valley and rolling hills.
     </div>
+  </div>
 
-    <h2 class="emoji">🚗 Getting There from Sarajevo</h2>
+  <div class="transport-option">
+    <h3>2. By Bus or Train (Budget-Friendly)</h3>
 
-    <div class="transport-option">
-        <h3>1. By Car (Fastest)</h3>
-        <p>Distance: ~70 km (~44 miles) north of Sarajevo via M17 highway.</p>
-        <p>Travel Time: Around 46–50 minutes, depending on traffic.</p>
-        <div class="tip">
-            Tip: Fuel and toll cost approx. $12–17. A scenic drive through the Bosna river valley and rolling hills.
-        </div>
-    </div>
+    <h4>Bus</h4>
+    <ul>
+      <li>Hourly departures from Sarajevo's Autobuska Stanica to Zenica's main station.</li>
+      <li>Duration: ~1 hour 10 min. Fare: $7–12.</li>
+      <li>Comfortable coaches often include A/C, reclining seats, wifi, and restroom facilities.</li>
+    </ul>
 
-    <div class="transport-option">
-        <h3>2. By Bus or Train (Budget-Friendly)</h3>
-        <h4>Bus</h4>
-        <ul>
-            <li>Hourly departures from Sarajevo's Autobuska Stanica to Zenica's main station.</li>
-            <li>Duration: ~1 hour 10 min. Fare: $7–12.</li>
-            <li>Comfortable coaches often include A/C, reclining seats, wifi, and restroom facilities.</li>
-        </ul>
+    <h4>Train</h4>
+    <ul>
+      <li>Departs from Sarajevo station or Alipašin Most up to 3x daily.</li>
+      <li>Duration: ~1 hour 19–39 min. Fare: $5–9.</li>
+      <li>Scenic rural route—budget travelers' top pick.</li>
+    </ul>
+  </div>
 
-        <h4>Train</h4>
-        <ul>
-            <li>Departs from Sarajevo station or Alipašin Most up to 3x daily.</li>
-            <li>Duration: ~1 hour 19–39 min. Fare: $5–9.</li>
-            <li>Scenic rural route—budget travelers' top pick.</li>
-        </ul>
-    </div>
+  <div class="transport-option">
+    <h3>3. From Sarajevo Airport (SJJ)</h3>
 
-    <div class="transport-option">
-        <h3>3. From Sarajevo Airport (SJJ)</h3>
-        <h4>By Car/Taxi</h4>
-        <ul>
-            <li>~47 min, ~70 km, fare $11–85.</li>
-            <li>Transfers for groups available via private sedan/minivan.</li>
-        </ul>
+    <h4>By Car/Taxi</h4>
+    <ul>
+      <li>~47 min, ~70 km, fare $11–85.</li>
+      <li>Transfers for groups available via private sedan/minivan.</li>
+    </ul>
 
-        <h4>By Public Transport</h4>
-        <ul>
-            <li>Bus/train from the airport to Sarajevo central, then onward to Zenica.</li>
-            <li>Train: ~$5–8, ~3 h total.</li>
-            <li>Bus: ~$9–12, ~2 h 39 min including transfer.</li>
-        </ul>
-    </div>
+    <h4>By Public Transport</h4>
+    <ul>
+      <li>Bus/train from the airport to Sarajevo central, then onward to Zenica.</li>
+      <li>Train: ~$5–8, ~3 h total.</li>
+      <li>Bus: ~$9–12, ~2 h 39 min including transfer.</li>
+    </ul>
+  </div>
+
+  <h2 style="color: #006b91;">Map Location</h2>
+  <div id="map-container" style="margin-bottom: 40px;"></div>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ✅ Scripts loaded at the end of the body -->
+  <script>
+    // Load header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        const header = document.getElementById('header-placeholder');
+        if (header) header.innerHTML = data;
+      });
+
+    // Load footer
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        const footer = document.getElementById('footer-placeholder');
+        if (footer) footer.innerHTML = data;
+      });
+
+    // Load Google Map iframe properly
+    window.addEventListener("DOMContentLoaded", function () {
+      const mapDiv = document.getElementById("map-container");
+      if (mapDiv) {
+        mapDiv.innerHTML = `
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.1025734386397!2d17.908193915665316!3d44.20155097910756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475eec166f6a83c9%3A0x6aebb2d7f8f165c3!2sHotel%20Zenica!5e0!3m2!1sen!2sba!4v1718807771234!5m2!1sen!2sba"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>`;
+      }
+    });
+  </script>
 </body>
 
 </html>
