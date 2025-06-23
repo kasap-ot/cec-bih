@@ -144,7 +144,9 @@ a:hover {
     border-radius: 5px;
     margin-top: 20px;
 }
-
+.contact-info>h1, .contact-info>h2, .contact-info>h3 {
+    color: var(--primary-color);
+}
 .contact-method {
     margin-bottom: 20px;
     padding-bottom: 15px;
@@ -166,6 +168,10 @@ a:hover {
 
 .contact-value {
     margin-left: 20px;
+}
+.contact-value>a{
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .social-icon {
@@ -300,6 +306,7 @@ a:hover {
     font-weight: bold;
     margin: 20px 0;
     transition: background-color 0.3s;
+
 }
 
 .registration-link:hover {
