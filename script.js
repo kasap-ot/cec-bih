@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const sideMenu = document.querySelector('.side-menu');
         const body = document.body;
 
-        console.log("Burger Icon element (after setTimeout):", burgerIcon); // Check this log
-
         if (burgerIcon && sideMenu) {
             burgerIcon.addEventListener('click', function() {
                 this.classList.toggle('active');
