@@ -17,43 +17,57 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
+
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                const footer = document.getElementById('footer-placeholder');
+                if (footer) footer.innerHTML = data;
+            });
     </script>
-    <h1 style="color: #006b91;">Contact</h1>
 
-    <div class="contact-info">
-        <p>If you have any questions, feel free to reach us at:</p>
+    <section class="section-container">
+        <h1 style="color: #006b91;">Contact</h1>
 
-        <div class="contact-method">
-            <span class="contact-label">Instagram:</span>
-            <div class="contact-value">
-                <a href="https://www.instagram.com/iaestecec" target="_blank">@iaestecec</a><br>
-                <a href="https://www.instagram.com/iaestelcbanjaluka/" target="_blank">@iaestelcbanjaluka</a>
+        <div class="contact-info">
+            <p>If you have any questions, feel free to reach us at:</p>
+
+            <div class="contact-method">
+                <span class="contact-label">Instagram:</span>
+                <div class="contact-value">
+                    <a href="https://www.instagram.com/iaestecec" target="_blank">@iaestecec</a><br>
+                    <a href="https://www.instagram.com/iaestelcbanjaluka/" target="_blank">@iaestelcbanjaluka</a>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <span class="contact-label">Email:</span>
+                <div class="contact-value">
+                    <a href="mailto:cec@iaeste.sk">cec@iaeste.sk</a>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <span class="contact-label">Facebook:</span>
+                <div class="contact-value">
+                    <a href="https://www.facebook.com/IAESTE.Central.European.Convention" target="_blank">IAESTE Central
+                        European Convention</a>
+                </div>
+            </div>
+
+            <div class="contact-method">
+                <span class="contact-label">Website and Instagram CER:</span>
+                <div class="contact-value">
+                    <a href="https://cer-core.iaeste.org" target="_blank">cer-core.iaeste.org</a><br>
+                    <a href="https://www.instagram.com/iaestecer.official" target="_blank">@iaestecer.official</a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="contact-method">
-            <span class="contact-label">Email:</span>
-            <div class="contact-value">
-                <a href="mailto:cec@iaeste.sk">cec@iaeste.sk</a>
-            </div>
-        </div>
+    <div id="footer-placeholder"></div>
 
-        <div class="contact-method">
-            <span class="contact-label">Facebook:</span>
-            <div class="contact-value">
-                <a href="https://www.facebook.com/IAESTE.Central.European.Convention" target="_blank">IAESTE Central
-                    European Convention</a>
-            </div>
-        </div>
-
-        <div class="contact-method">
-            <span class="contact-label">Website and Instagram CER:</span>
-            <div class="contact-value">
-                <a href="https://cer-core.iaeste.org" target="_blank">cer-core.iaeste.org</a><br>
-                <a href="https://www.instagram.com/iaestecer.official" target="_blank">@iaestecer.official</a>
-            </div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

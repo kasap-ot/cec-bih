@@ -10,30 +10,48 @@
     --highlight-green: #cadecf;
     --highlight-yellow: #d7dda0;
     --highlight-blue: #c4d5e5;
-    --width-container: 75%;
+    --width-container: 100%;
+    --burger-color: white; /* Color of the burger lines */
+    --side-menu-bg: rgba(0, 0, 0, 0.9); /* Background of the side menu */
+    --side-menu-link-color: white;
+    --side-menu-link-hover: #ffd700;
+    --footer-heading-color: #ffffff; /* For headings in footer */
+    --footer-link-hover-color: #ffffff; /* White on hover */
+    --footer-border-color: rgba(255, 255, 255, 0.08);
+    --logo-dark-color: #0E2C44;
 }
 
-/* Comming Soon Page Styles */
-.comming_soon {
+.coming-soon {
     text-align: center;
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-top: 50px;
+    padding: 50px 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 40px auto; 
+    max-width: 600px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #004d66;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 
 /* Header Styles */
 .header-container {
-    background-color: var(--primary-color);
+    /* background-color: var(--light-gray); */
     padding: 15px 0;
     margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
 .header-content {
-    max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -54,15 +72,22 @@
     margin-right: 10px;
 }
 
+.logo-img-main {
+    height: 460px;
+}
+
 .nav-links {
     display: flex;
     gap: 10px;
+    padding: 12px 24px;
     flex-wrap: wrap;
+    /* background-color: var(--primary-color); */
+    border-radius: 5px;
 }
 
 .nav-button {
     padding: 8px 15px;
-    background-color: var(--background-color);
+    /* background-color: var(--highlight-blue); */
     color: var(--primary-color);
     text-decoration: none;
     border-radius: 5px;
@@ -80,15 +105,51 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-image: url('pictures/CEC-BOSNIA-BGRD.jpg');
-    background-size: 85% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+        /* linear-gradient(to bottom, var(--gradient-top-color), var(--gradient-middle-color), var(--gradient-bottom-color)); */
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+    background-size: 1280px;
+    background-position: top center, center center;
     background-color: var(--background-color);
     line-height: 1.6;
-    padding: 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
     width: var(--width-container);
+    display: flex;
+    flex-direction: column;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.section-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 14px;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-position: center top;
+    }
+
+    main {
+        align-items: center;
+    }
+
+    .logo-img-main {
+        height: 250px;
+    }
 }
 
 body>h1, body>h2, body>h3 {
@@ -104,6 +165,9 @@ a:hover {
 /* Countdown Container */
 
 .countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     font-size: 2rem;
     color: var(--primary-color);
@@ -143,7 +207,10 @@ a:hover {
     padding: 20px;
     border-radius: 5px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 600px;
 }
+
 .contact-info>h1, .contact-info>h2, .contact-info>h3 {
     color: var(--primary-color);
 }
@@ -195,6 +262,7 @@ a:hover {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 30px;
+    max-width: 768px;
 }
 
 .highlight-box {
@@ -207,14 +275,73 @@ a:hover {
     color: var(--text-color);
 }
 
-.footer-info {
-    text-align: center;
+.footer-container {
+    width: 100%;
+    background-color: var(--logo-dark-color);
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: var(--highlight-yellow);
-    margin-top: 40px;
-    padding-top: 20px;
-    background-color: var(--primary-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1028px;
+    margin: 0 auto; 
+    flex-wrap: wrap; 
+   
+    text-align: left;
+}
+
+.footer-info {
+    margin-bottom: 0;
+    word-wrap: break-word;
+}
+
+.footer-info .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-info .contact-links a {
+    color: var(--highlight-blue);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-info .contact-links a:hover {
+    color: var(--footer-link-hover-color);
+    transform: translateX(5px);
+}
+
+.footer-info .contact-links a:hover {
+    color: var(--highlight-blue); 
+    text-decoration: underline;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.footer-nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+    color: var(--highlight-blue);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--footer-link-hover-color);
+    transform: translateX(5px);
 }
 
 .navigation a {
@@ -321,15 +448,155 @@ a:hover {
     margin: 15px 0;
 }
 
+.nav-menu {
+    display: none;
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    position: relative;
+}
+
+.burger-icon:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.burger-icon .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: 1px;
+}
+
+
+header .nav-menu > nav {
+    display: none;
+}
+
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+    padding-top: 80px; 
+    box-sizing: border-box;
+}
+
+.side-menu.open {
+    right: 0; 
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.side-menu ul li a {
+    color: var(--side-menu-link-color);
+    text-decoration: none;
+    font-size: 1.4em;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    color: var(--side-menu-link-hover);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dates {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .nav-button {
+        font-size: 10px;
+    }
+}
+
+
 /* Responsive Styles */
 @media (max-width: 600px) {
-    .header-content {
-        flex-direction: column;
-        gap: 10px;
+    main {
+        padding: 20px 15px;
     }
-    
+
     .nav-links {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .header-content {
+        justify-content: start;
+    }
+
+    .dates {
+        font-size: 48px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+        gap: 30px;
+    }
+
+    .footer-content > div,
+    .footer-content > nav {
+        min-width: unset;
         width: 100%;
-        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-content h2,
+    .footer-content h3 {
+        text-align: center;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 15px;
+    }
+
+    .footer-info .contact-links {
+        align-items: center;
+    }
+
+    .coming-soon {
+        font-size: 1.5em;
+        padding: 25px 15px;
+        margin: 15px auto;
+    }
+
+    .contact-info {
+        min-width: auto;
     }
 }

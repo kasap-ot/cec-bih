@@ -9,92 +9,100 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
     <script>
-    fetch('header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-    fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
 
-    // Countdown Timer
-    function DayNameFromDOW(dDate) {
-        var weekday = new Array(7);
-        weekday[0] = "Sunday";
-        weekday[1] = "Monday";
-        weekday[2] = "Tuesday";
-        weekday[3] = "Wednesday";
-        weekday[4] = "Thursday";
-        weekday[5] = "Friday";
-        weekday[6] = "Saturday";
-        return weekday[dDate.getDay()];
+        // Countdown Timer
+        function DayNameFromDOW(dDate) {
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            return weekday[dDate.getDay()];
         }
 
         function NextWebinarDateandTime() {
-        CurDate = new Date('2025-09-19T00:00:00');
+            CurDate = new Date('2025-09-19T00:00:00');
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-        NextWebinarDateandTime();
+            NextWebinarDateandTime();
 
-        var CurrentMinutes = CurDate.getMinutes();
-        var CurrentSeconds = CurDate.getSeconds();
+            var CurrentMinutes = CurDate.getMinutes();
+            var CurrentSeconds = CurDate.getSeconds();
 
 
-        const MinutesPerHour = 60
-        const IntervalBetweenWebinar  = 60; // minutes
-        
+            const MinutesPerHour = 60
+            const IntervalBetweenWebinar = 60; // minutes
 
-        var nSecsUntilNextWebinar =
-            (3600) - (CurrentMinutes*60) - CurrentSeconds;
 
-        nextInt = Math.ceil((MinutesPerHour - CurrentMinutes) / IntervalBetweenWebinar);
-        
             var nSecsUntilNextWebinar =
-            (MinutesPerHour * (nextInt*IntervalBetweenWebinar)) - (CurrentMinutes*60) - CurrentSeconds;
+                (3600) - (CurrentMinutes * 60) - CurrentSeconds;
+
+            nextInt = Math.ceil((MinutesPerHour - CurrentMinutes) / IntervalBetweenWebinar);
+
+            var nSecsUntilNextWebinar =
+                (MinutesPerHour * (nextInt * IntervalBetweenWebinar)) - (CurrentMinutes * 60) - CurrentSeconds;
 
 
-        
-        NextWebinar =
-            CurDate.getTime() / 1000 +
-            nSecsUntilNextWebinar;
-        
-        var d = new Date();
 
-        dd = new Date(CurDate.getTime()+(1000*(nSecsUntilNextWebinar)));
-        var flipdown = new FlipDown(NextWebinar)
-            .start()
+            NextWebinar =
+                CurDate.getTime() / 1000 +
+                nSecsUntilNextWebinar;
 
-            .ifEnded(() => {});
-    });
-</script>
+            var d = new Date();
+
+            dd = new Date(CurDate.getTime() + (1000 * (nSecsUntilNextWebinar)));
+            var flipdown = new FlipDown(NextWebinar)
+                .start()
+
+                .ifEnded(() => { });
+        });
+    </script>
 </head>
 
 <body>
     <div id="header-placeholder"></div>
-       <div class="countdown-container">
-       <h1> 19 - 21 September</h1>
-       <div id="flipdown" class="flipdown"></div>  
-    </div>
-
-
-    <div class="event-description">
-        <p>Get ready for the Autumn CEC hosted in Zenica, Bosnia and Herzegovina—a vibrant celebration of IAESTE
-            community, culture, and exploration! Join us for an unforgettable convention where you'll connect, learn,
-            and discover the magic of this diverse country.</p>
-
-        <div class="highlight-box">
-            CEC in Bosnia and Herzegovina—where history meets mountain adventures, hearty food ushers in friendship, and
-            IAESTE bonds grow stronger under Bosnian skies. Prepare to be inspired, expanded, and connected.
+    <div class="countdown-container">
+        <div class="logo">
+            <img src="pictures/LOGO-CEC-FINAL-CLEAN.png" alt="CEC Logo" class="logo-img-main">
         </div>
-
-        <p>Pack your bags, bring your energy, and let's meet in Bosnia!</p>
+        <span class="dates">19 - 21 September</span>
+        <div id="flipdown" class="flipdown"></div>
     </div>
+
+    <main class="section-container">
+        <div class="event-description">
+            <p>Get ready for the Autumn CEC hosted in Zenica, Bosnia and Herzegovina—a vibrant celebration of IAESTE
+                community, culture, and exploration! Join us for an unforgettable convention where you'll connect,
+                learn,
+                and discover the magic of this diverse country.</p>
+
+            <div class="highlight-box">
+                CEC in Bosnia and Herzegovina—where history meets mountain adventures, hearty food ushers in friendship,
+                and
+                IAESTE bonds grow stronger under Bosnian skies. Prepare to be inspired, expanded, and connected.
+            </div>
+
+            <p>Pack your bags, bring your energy, and let's meet in Bosnia!</p>
+        </div>
+    </main>
 
     <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
