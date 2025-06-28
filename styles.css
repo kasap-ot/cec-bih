@@ -384,6 +384,20 @@ a:hover {
     margin: 10px 0;
 }
 
+.map-section {
+    background-color: var(--white);
+    padding-top: 10px;
+    border-top-right-radius: 3%;
+    border-top-left-radius: 3%;
+}
+
+.map-section p {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 20px;
+}
+
 /* Registration Page Styles */
 .event-info {
     background-color: var(--light-gray);
