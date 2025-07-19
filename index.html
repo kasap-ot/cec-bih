@@ -9,18 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
     <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                highlightNavLink()
-            });
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
         // Countdown Timer
         function DayNameFromDOW(dDate) {
             var weekday = new Array(7);
@@ -79,7 +67,7 @@
 
     <div class="countdown-container">
         <div class="logo">
-            <img src="pictures/LOGO-CEC-FINAL-CLEAN.png" alt="CEC Logo" class="logo-img-main">
+            <img src="pictures/logo/LOGO-CEC-FINAL-CLEAN.png" alt="CEC Logo" class="logo-img-main">
         </div>
         <span class="dates">19 - 21 September</span>
         <div id="flipdown" class="flipdown"></div>
@@ -111,8 +99,21 @@
 
     <div id="footer-placeholder"></div>
     <script src="header.js"></script>
-    
     <script src="script.js"></script>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                highlightNavLink()
+                initBurgerMenu();
+            });
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

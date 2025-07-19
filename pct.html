@@ -73,6 +73,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 highlightNavLink()
+                initBurgerMenu();
             });
         fetch('footer.html')
             .then(res => res.text())

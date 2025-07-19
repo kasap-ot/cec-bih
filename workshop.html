@@ -10,11 +10,15 @@
 
 <body>
     <div id="header-placeholder"></div>
-    <div style="height: 60vh; padding: 10px;">
-        <div class="coming-soon">
-            <span class="icon">⌛</span> Coming soon!
+    <div class="section-container">
+        <h1 style="color: #006b91; text-align: center;">Workshops</h1>
+        <div style="height: 60vh; padding: 10px;">
+            <div class="coming-soon">
+                <span class="icon">⌛</span> Coming soon!
+            </div>
         </div>
     </div>
+
 
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
@@ -25,6 +29,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 highlightNavLink()
+                initBurgerMenu();
             });
         fetch('footer.html')
             .then(res => res.text())

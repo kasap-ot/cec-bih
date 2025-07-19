@@ -122,7 +122,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-image: url('pictures/CEC-BOSNIA-BGRD.jpg');
+    background-image: url('pictures/logo/CEC-BOSNIA-BGRD.jpg');
     /* linear-gradient(to bottom, var(--gradient-top-color), var(--gradient-middle-color), var(--gradient-bottom-color)); */
     background-repeat: no-repeat, no-repeat;
     background-attachment: fixed;
