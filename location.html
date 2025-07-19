@@ -13,9 +13,8 @@
   <div id="header-placeholder"></div>
 
   <section class="section-container">
-    <h1 style="color: #006b91; text-align: center;">Location page</h1>
-
-    <div class="hotel-info">
+    <h1 style="color: #006b91; text-align: center;">Location</h1>
+    <div class="event-description">
       <h2>Hotel Zenica, Zenica, Bosnia and Herzegovina</h2>
       <h3 class="emoji">About Zenica</h3>
       <p>
@@ -25,17 +24,42 @@
         Bosna River, surrounded by hills—striking yet intimate.
       </p>
 
-      <p>Pictures from the hotel</p>
+      <div class="image-carousel">
+        <div class="carousel-track" id="carousel-track">
+          <img src="pictures/hotel/1.jpg" alt="Hotel2">
+          <img src="pictures/hotel/2.jpg" alt="Hotel3">
+          <img src="pictures/hotel/4.jpg" alt="Hotel5">
+          <img src="pictures/hotel/5.webp" alt="Hotel6">
+          <img src="pictures/hotel/6.jpg" alt="Hotel7">
+          <img src="pictures/hotel/7.jpg" alt="Hotel8">
+          <img src="pictures/hotel/8.jpg" alt="Hotel9">
+          <img src="pictures/hotel/9.jpg" alt="Hotel10">
+          <img src="pictures/hotel/10.jpg" alt="Hotel11">
+          <img src="pictures/hotel/11.jpg" alt="Hotel12">
+          <img src="pictures/hotel/12.jpeg" alt="Hotel13">
+          <img src="pictures/hotel/13.jpg" alt="Hotel14">
+          <img src="pictures/hotel/14.jpg" alt="Hotel15">
+          <img src="pictures/hotel/15.jpeg" alt="Hotel16">
+          <img src="pictures/hotel/16.jpg" alt="Hotel17">
+          <img src="pictures/hotel/19.webp" alt="Hotel20">
+          <!-- Add more images as needed -->
+        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)">›</button>
+      </div>
+
     </div>
 
     <h2 style="color: #006b91; text-align: center;">Getting There from Sarajevo</h2>
 
     <div class="transport-option">
       <h3>Travel Costs</h3>
-      <ul>
-        <li><strong>By Bus:</strong> ~14 € (round trip)</li>
-        <li><strong>By Car:</strong> ~20 € (fuel + toll) – fuel price around 1.3 €/L</li>
-        <li><strong>By Train:</strong> 5–7 € one way</li>
+      <ul class="travel-list">
+        <li><strong>Bus:</strong> ~14 € (round trip)</li>
+        <li><strong>Car:</strong> ~20 € (fuel + toll) <span style="font-style: italic;">* Fuel price around
+            1.3 €/L</span>
+        </li>
+        <li><strong>Train:</strong> 5–7 € one way</li>
       </ul>
     </div>
 
@@ -81,9 +105,9 @@
       </ul>
     </div>
     <div class="map-section">
-      <p>📍 Hotel Zenica - Kamberovića čikma bb, Zenica</p>
-      <div id="map-container" style="margin-bottom: 40px;">
-        <iframe width="100%" height="450" style="border:0;" loading="lazy" allowfullscreen=""
+      <p>📍 <strong>Hotel Zenica</strong> - Kamberovića čikma bb, Zenica</p>
+      <div id="map-container" style="margin: 0 20px">
+        <iframe width="100%" height="450" style="border: none;" loading="lazy" allowfullscreen=""
           referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Hotel+Zenica,+Kamberovi%C4%87a+%C4%8Dikma+bb,+Zenica&amp;output=embed">
         </iframe>
@@ -131,6 +155,7 @@
   </script>
 
   <script src="script.js"></script>
+  <script src="carousel.js"></script>
 </body>
 
 </html>

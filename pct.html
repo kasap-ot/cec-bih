@@ -8,23 +8,48 @@
     <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
 </head>
 <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 
 <body>
     <div id="header-placeholder"></div>
-    <div style="height: 60vh; padding: 10px;">
-        <div class="coming-soon">
-            <span class="icon">⌛</span> Coming soon!
+    <div class="section-container">
+        <h1 style="color: #006b91; text-align: center;">Pre-conference tour</h1>
+
+        <div class="event-description sarajevo-highlight">
+            <h3>Discover Sarajevo</h3>
+
+            <p>
+                Before we kick off the <strong>51st CEC</strong>, we’re taking you on a journey to the heart of Bosnia –
+                <strong>Sarajevo</strong>, a city where <em>East meets West</em>, and history, culture, and people
+                intertwine like nowhere else.
+            </p>
+
+            <p>
+                    Wander through the lively streets of <strong>Baščaršija</strong>, visit the iconic <strong>Sebilj
+                    fountain</strong>, and take in the unique blend of <em>Ottoman, Austro-Hungarian, and modern
+                    influences</em> that shape Sarajevo’s identity.
+            </p>
+
+            <p>
+                Enjoy a relaxed afternoon exploring local shops, tasting <em>traditional food</em>, and soaking in
+                the atmosphere of a place where <strong>three religions and cultures</strong> have lived side by side
+                for centuries.
+            </p>
+
+            <p class="highlighted-call">
+                ✨ <strong>Don’t miss this opportunity</strong> to experience Sarajevo’s charm with your fellow
+                participants!
+            </p>
         </div>
     </div>
     <div id="footer-placeholder"></div>

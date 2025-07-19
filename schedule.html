@@ -8,25 +8,147 @@
     <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
 </head>
 <script>
-        fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 
 <body>
     <div id="header-placeholder"></div>
-    <div style="height: 60vh; padding: 10px;">
-        <div class="coming-soon">
-            <span class="icon">⌛</span> Coming soon!
+
+    <div class="section-container">
+        <h1 style="color: #006b91; text-align: center;">Schedule</h1>
+        <div class="event-description sarajevo-highlight">
+            <h2 style="color: #006b91; text-align: start;">Friday, 19th September</h2>
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>14:00 - 17:30</td>
+                        <td>Check in</td>
+                    </tr>
+                    <tr>
+                        <td>19:00 - 20:00</td>
+                        <td>Dinner time</td>
+                    </tr>
+                    <tr>
+                        <td>20:15 - 20:30</td>
+                        <td>Gathering in the conference room for the Opening Ceremony</td>
+                    </tr>
+                    <tr>
+                        <td>20:30 - 21:30</td>
+                        <td>Opening Ceremony</td>
+                    </tr>
+                    <tr>
+                        <td>21:30 - 01:00</td>
+                        <td>Networking, music, games</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2 style="color: #006b91; text-align: start;">Saturday, 20th September</h2>
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:00</td>
+                        <td>Breakfast</td>
+                    </tr>
+                    <tr>
+                        <td>09:30 - 11:00</td>
+                        <td>Workshop 1 (part 1)</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 11:30</td>
+                        <td>Coffee break</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 - 13:00</td>
+                        <td>Workshop 1 (part 2)</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 14:00</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 14:30</td>
+                        <td>Group photo</td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 16:30</td>
+                        <td>Workshop 2 (part 1)</td>
+                    </tr>
+                    <tr>
+                        <td>16:30 - 17:00</td>
+                        <td>Coffee break</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 18:30</td>
+                        <td>Workshop 1 (part 2)</td>
+                    </tr>
+                    <tr>
+                        <td>18:30 - 20:15</td>
+                        <td>Free time</td>
+                    </tr>
+                    <tr>
+                        <td>20:15 - 21:00</td>
+                        <td>Preparation for the international evening</td>
+                    </tr>
+                    <tr>
+                        <td>21:00</td>
+                        <td>International evening</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2 style="color: #006b91; text-align: start;">Sunday, 21st September</h2>
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 10:00</td>
+                        <td>Breakfast</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 11:00</td>
+                        <td>Closing ceremony</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:00</td>
+                        <td>Check out</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>Post conference tour</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span style="font-style: italic; font-size: 10px;">*This is a draft version, the schedule may vary</span>
         </div>
     </div>
+
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
 </body>
