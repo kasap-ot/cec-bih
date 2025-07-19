@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
 </head>
-<script>
-    fetch('header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-    fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
 
 <body>
     <div id="header-placeholder"></div>
@@ -35,7 +23,7 @@
             </p>
 
             <p>
-                    Wander through the lively streets of <strong>Baščaršija</strong>, visit the iconic <strong>Sebilj
+                Wander through the lively streets of <strong>Baščaršija</strong>, visit the iconic <strong>Sebilj
                     fountain</strong>, and take in the unique blend of <em>Ottoman, Austro-Hungarian, and modern
                     influences</em> that shape Sarajevo’s identity.
             </p>
@@ -50,10 +38,48 @@
                 ✨ <strong>Don’t miss this opportunity</strong> to experience Sarajevo’s charm with your fellow
                 participants!
             </p>
+
+            <div class="image-carousel">
+                <div class="carousel-track" id="carousel-track">
+                    <img src="pictures/pre/adev-ZVwP01HBOwU-unsplash.jpg" alt="PCT2">
+                    <img src="pictures/pre/hongbin-C6Hjg2SpGgM-unsplash.jpg" alt="PCT3">
+                    <img src="pictures/pre/hongbin-OT8bxxMA3j0-unsplash.jpg" alt="PCT5">
+                    <img src="pictures/pre/matej-pribanic-rvQXdBoYwwY-unsplash.jpg" alt="PCT6">
+                    <img src="pictures/pre/matej-pribanic-SLlk9QQqg3w-unsplash.jpg" alt="PCT7">
+                    <img src="pictures/pre/mi-yo-vLGG-S1-hj0-unsplash.jpg" alt="PCT8">
+                    <img src="pictures/pre/nancy-hann-cnktbiZJICw-unsplash.jpg" alt="PCT9">
+                    <img src="pictures/pre/oguzhan-edman-3ipMzE1rURM-unsplash.jpg" alt="PCT10">
+                    <img src="pictures/pre/peter-schulz-5plZn0kLJnM-unsplash.jpg" alt="PCT11">
+                </div>
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">›</button>
+            </div>
+        </div>
+
+        <h1 style="color: #006b91; text-align: center;">Post-conference tour</h1>
+        <div style="padding: 10px;">
+            <div class="coming-soon">
+                <span class="icon">⌛</span> Coming soon!
+            </div>
         </div>
     </div>
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
+    <script src="carousel.js"></script>
+    <script src="header.js"></script>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                highlightNavLink()
+            });
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>

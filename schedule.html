@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>CEC Bosnia and Herzegovina 2025 - Contact</title>
 </head>
-<script>
-    fetch('header.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-    fetch('footer.html')
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
 
 <body>
     <div id="header-placeholder"></div>
@@ -26,7 +14,7 @@
     <div class="section-container">
         <h1 style="color: #006b91; text-align: center;">Schedule</h1>
         <div class="event-description sarajevo-highlight">
-            <h2 style="color: #006b91; text-align: start;">Friday, 19th September</h2>
+            <h2 style="color: #006b91; text-align: start;">Friday, 19.09</h2>
             <table class="fee-table">
                 <thead>
                     <tr>
@@ -58,7 +46,7 @@
                 </tbody>
             </table>
             <br>
-            <h2 style="color: #006b91; text-align: start;">Saturday, 20th September</h2>
+            <h2 style="color: #006b91; text-align: start;">Saturday, 20.09</h2>
             <table class="fee-table">
                 <thead>
                     <tr>
@@ -118,7 +106,7 @@
                 </tbody>
             </table>
             <br>
-            <h2 style="color: #006b91; text-align: start;">Sunday, 21st September</h2>
+            <h2 style="color: #006b91; text-align: start;">Sunday, 21.09</h2>
             <table class="fee-table">
                 <thead>
                     <tr>
@@ -151,6 +139,20 @@
 
     <div id="footer-placeholder"></div>
     <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                highlightNavLink()
+            });
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
