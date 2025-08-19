@@ -107,14 +107,15 @@
 }
 
 .nav-button.active {
-  background-color: var(--primary-color); /* or any accent color */
-  color: var(--white);
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 6px 12px;
-  transition: background-color 0.3s ease;
-  max-width: fit-content;
-  margin: 0 auto;
+    background-color: var(--primary-color);
+    /* or any accent color */
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease;
+    max-width: fit-content;
+    margin: 0 auto;
 }
 
 
@@ -791,10 +792,65 @@ header .nav-menu>nav {
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 24px 12px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.workshop-card {
+    background-color: var(--light-gray);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.workshop-card:hover {
+    transform: translateY(-4px);
+}
+
+.workshop-title {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.workshop-author {
+    font-size: 0.95rem;
+    color: #555;
+    font-style: italic;
+}
+
+
 
 @media (max-width: 1024px) {
     .nav-button {
         font-size: 10px;
+    }
+}
+
+@media (max-width: 820px) {
+    .workshop-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px 10px;
+    }
+
+    .workshop-card {
+        padding: 16px;
+    }
+
+    .workshop-title {
+        font-size: 1.1rem;
+    }
+
+    .workshop-author {
+        font-size: 0.9rem;
     }
 }
 
@@ -870,5 +926,4 @@ header .nav-menu>nav {
     .sarajevo-highlight {
         padding: 14px;
     }
-
 }
