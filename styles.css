@@ -608,13 +608,21 @@ a:hover {
     font-weight: bold;
     margin: 20px 0;
     transition: background-color 0.3s;
-
 }
 
 .registration-link:hover {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
+
+.registration-link.disabled-link {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    text-decoration: none;
+}
+
 
 .member-types {
     background-color: var(--highlight-blue);
