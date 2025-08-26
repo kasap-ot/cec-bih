@@ -13,3 +13,17 @@ function moveSlide(direction) {
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
 }
+
+function moveSlide2(direction) {
+    const track = document.getElementById('carousel-track2');
+    const slides = track.children;
+    const totalSlides = slides.length;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = totalSlides - 1;
+    if (currentIndex >= totalSlides) currentIndex = 0;
+
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+}

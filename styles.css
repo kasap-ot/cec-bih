@@ -487,11 +487,11 @@ a:hover {
 .carousel-track img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     flex-shrink: 0;
     flex-grow: 0;
     border-radius: 8px;
-    background: #fff;
+    background: #000;
 }
 
 .carousel-btn {
@@ -802,7 +802,7 @@ header .nav-menu>nav {
 
 .workshop-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
     gap: 24px;
     padding: 24px 12px;
     max-width: 1024px;
@@ -810,28 +810,74 @@ header .nav-menu>nav {
 }
 
 .workshop-card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--light-gray);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease;
-    text-align: center;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .workshop-card:hover {
     transform: translateY(-4px);
 }
 
+.workshop-card-header {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.workshop-text {
+  flex: 1 1 60%;
+  min-width: 240px;
+}
+
 .workshop-title {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.workshop-topic {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.workshop-description {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.workshop-authors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  flex: 1 1 100px;
+}
+
+.author-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .workshop-author {
-    font-size: 0.95rem;
-    color: #555;
-    font-style: italic;
+  font-size: 0.9rem;
+  color: #444;
+  font-style: italic;
 }
 
 
