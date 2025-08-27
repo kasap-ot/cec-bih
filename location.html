@@ -117,11 +117,12 @@
 
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
-
+  <div id="lightbox-placeholder"></div>
   <!-- ✅ Scripts loaded at the end of the body -->
   <script src="script.js"></script>
   <script src="carousel.js"></script>
   <script src="header.js"></script>
+  <script src="lightbox.js"></script>
   <script>
     // Load header
     fetch('header.html')
@@ -133,7 +134,7 @@
           highlightNavLink()
           initBurgerMenu();
         }
-        
+
       });
 
     // Load footer
@@ -143,6 +144,13 @@
         const footer = document.getElementById('footer-placeholder');
         if (footer) footer.innerHTML = data;
       });
+
+    fetch('lightbox.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('lightbox-placeholder').innerHTML = data
+        setupLightboxOnDemand('.carousel-track')
+      })
 
     // Load Google Map iframe properly
     window.addEventListener("DOMContentLoaded", function () {
