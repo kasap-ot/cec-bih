@@ -121,7 +121,7 @@
 
 /* Base Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     line-height: 1.6;
     background-image: url('pictures/logo/CEC-BOSNIA-BGRD.jpg');
     /* linear-gradient(to bottom, var(--gradient-top-color), var(--gradient-middle-color), var(--gradient-bottom-color)); */
@@ -168,6 +168,10 @@ main {
 
     .logo-img-main {
         height: 250px;
+    }
+
+    .section-container {
+        padding: 12px;
     }
 }
 
@@ -823,7 +827,7 @@ header .nav-menu>nav {
 
 .workshop-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
     gap: 24px;
     padding: 24px 12px;
     max-width: 1024px;
@@ -835,146 +839,277 @@ header .nav-menu>nav {
     flex-direction: column;
     background-color: var(--light-gray);
     border-radius: 14px;
-    padding: 24px;
+    padding: 16px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .workshop-card:hover {
     transform: translateY(-4px);
 }
 
+.workshop-label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: var(--primary-color); /* default blue */
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
 .workshop-card-header {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .workshop-text {
-  flex: 1 1 60%;
-  min-width: 240px;
+    flex: 1 1 60%;
+    min-width: 150px;
+}
+
+.workshop-title-box {
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .workshop-title {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-  color: var(--text-color);
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
 }
 
 .workshop-topic {
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.workshop-description-box {
+    max-height: 180px;
+    overflow-y: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    scrollbar-width: thin;
+    transition: all 0.3s ease;
+}
+
+.workshop-description-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+}
+
+.workshop-description-box:hover {
+    overflow-y: auto;
+}
+
+.workshop-description-box:hover::after {
+    opacity: 0;
+}
+
+/* Optional: Thin scrollbar */
+.workshop-description-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.workshop-description-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.workshop-description-box::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .workshop-description {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: -webkit-box;
+    margin: 0;
+    margin-bottom: 12px;
+    padding: 4px;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+    letter-spacing: 0.1px;
+    line-height: 1.75;
+    font-weight: 400;
+    color: #444;
 }
 
 .workshop-authors {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-  flex: 1 1 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    flex: 1 1 100px;
+    justify-content: center;
 }
 
 .author-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.workshop-author-box {
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .workshop-author {
-  font-size: 0.9rem;
-  color: #444;
-  font-style: italic;
+    font-size: 0.9rem;
+    color: #444;
+    font-style: italic;
+    justify-content: center;
+    display: flex;
 }
 
-#carousel-track2 img { cursor: pointer; }
-img { transition: transform 0.3s ease; }
-img:hover {transform: scale(1.05);}
+#carousel-track2 img {
+    cursor: pointer;
+}
+
+img {
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
 
 /* Lightbox base */
 .lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.92);
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
 }
 
-.lightbox.open { display: flex; }
+.lightbox.open {
+    display: flex;
+}
 
 .lb-track {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .lb-strip {
-  display: flex;
-  height: 100%;
-  transition: transform 0.35s ease;
+    display: flex;
+    height: 100%;
+    transition: transform 0.35s ease;
 }
 
 .lb-strip img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  background: #000;
-  flex: 0 0 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: #000;
+    flex: 0 0 100%;
 }
 
 /* Controls */
 .lb-btn,
 .lb-close {
-  position: absolute;
-  border: none;
-  background: rgba(255,255,255,0.14);
-  color: #fff;
-  font-size: 28px;
-  line-height: 1;
-  padding: 12px 14px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background .2s ease;
-  backdrop-filter: blur(4px);
-  z-index: 1;
+    position: absolute;
+    border: none;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    padding: 12px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .2s ease;
+    backdrop-filter: blur(4px);
+    z-index: 1;
 }
+
 .lb-btn:hover,
-.lb-close:hover { background: rgba(255,255,255,0.22); }
+.lb-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
 
-.lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
-.lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
-.lb-close { top: 14px; right: 14px; font-size: 26px; }
+.lb-prev {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-body.lb-no-scroll { overflow: hidden; }
+.lb-next {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lb-close {
+    top: 14px;
+    right: 14px;
+    font-size: 26px;
+}
+
+body.lb-no-scroll {
+    overflow: hidden;
+}
 
 @media (max-width: 1024px) {
     .nav-button {
         font-size: 10px;
     }
+
+    .author-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .workshop-title {
+        font-size: 1.2rem;
+    }
+
+    .workshop-description {
+        font-size: 0.85rem;
+    }
+
 }
 
 @media (max-width: 820px) {
     .workshop-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));;
         gap: 16px;
-        padding: 16px 10px;
+        padding: 0px;
     }
 
     .workshop-card {
@@ -982,11 +1117,24 @@ body.lb-no-scroll { overflow: hidden; }
     }
 
     .workshop-title {
-        font-size: 1.1rem;
+        font-size: 1.35rem;
     }
 
     .workshop-author {
         font-size: 0.9rem;
+    }
+
+    .author-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .event-description {
+        padding: 12px 20px;
+    }
+
+    .event-description p {
+        font-size: 1rem;
     }
 }
 
@@ -1074,5 +1222,26 @@ body.lb-no-scroll { overflow: hidden; }
         max-height: 80vh;
     }
 
-    .lb-btn, .lb-close { font-size: 32px; padding: 16px 18px; }
+    .lb-btn,
+    .lb-close {
+        font-size: 32px;
+        padding: 16px 18px;
+    }
+
+    .workshop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workshop-description-box {
+        overflow-y: auto;
+        max-height: 180px;
+    }
+
+    .workshop-description-box::after {
+        display: none;
+    }
+
+    .workshop-description {
+        font-size: 14px;
+    }
 }
